@@ -2,6 +2,19 @@
 
 Virgo is a Java Business Rule Engine, based on Libra. It supports an easy-to-use syntax for defining business rule.
 
+## how to use
+
+```java
+// create a business rule
+BusinessRule rule = new DefaultBusinessRule(someRule);
+
+// create a rule context
+RuleContext context = new RuleContext(someObject);
+
+// execute it
+ExecutionResult result = rule.execute(ruleContext);
+```
+
 ## grammar
 
 These are the supported grammar of Virgo
