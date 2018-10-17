@@ -47,6 +47,8 @@ SET {someVariable} = {someExpression};
 SET {anotherVariable} = {anotherExpression};
 ```
 
+*Note: The line break is not required, it's just to make it easier to read*
+
 ## examples
 
 The following are valid examples:
