@@ -26,25 +26,46 @@ IF {condition} THEN {actions}
 
 Branched conditions:
 ```
-IF {condition} THEN {actions}
-ELSE IF {condition} THEN {actions}
-ELSE {actions}
+IF <condition> THEN <actions>
+ELSE IF <condition> THEN <actions>
+ELSE <actions>
+```
+
+Nested conditions:
+```
+IF <condition> THEN
+  IF <condition> THEN
+    <actions>
+  ELSE
+    <actions>
+```
+
+Nested conditions with braces:
+```
+IF <condition> THEN {
+  IF <condition> THEN
+    <actions>
+  ELSE
+    <actions>
+} ELSE {
+    <actions>
+}
 ```
 
 No condition at all:
 ```
-{actions}
+<actions>
+```
+
+Multiple actions:
+```
+<action>;
+<action>;
 ```
 
 Currently only assignment action is supported:
 ```
 SET {someVariable} = {someExpression}
-```
-
-You can have multiple actions separated by semicolon:
-```
-SET {someVariable} = {someExpression};
-SET {anotherVariable} = {anotherExpression};
 ```
 
 *Note: The line break is not required, it's just to make it easier to read*
