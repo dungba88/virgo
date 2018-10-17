@@ -6,13 +6,19 @@ Virgo is a Java Business Rule Engine, based on Libra. It supports an easy-to-use
 
 ```java
 // create a business rule
-BusinessRule rule = new DefaultBusinessRule(someRule);
+BusinessRule rule = new DefaultBusinessRule("IF customer.age > 50 THEN SET seniorCitizen = true");
 
 // create a rule context
 RuleContext context = new RuleContext(someObject);
 
 // execute it
-ExecutionResult result = rule.execute(ruleContext);
+ExecutionResult result = rule.execute(ruleContext).orElseThrow(() -> new NullPointerException("result is null"));
+
+// get the result. this will get the first value in the result map
+Object resultValue = result.getValue();
+
+// get a specific result
+resultValue = result.getValue("seniorCitizen");
 ```
 
 ## grammar
