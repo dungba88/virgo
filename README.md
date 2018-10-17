@@ -54,10 +54,10 @@ IF <condition> THEN {
 
 No condition at all:
 ```
-<actions>
+<action>
 ```
 
-Multiple actions:
+Multiple actions can be separated by semicolons:
 ```
 <action>;
 <action>;
