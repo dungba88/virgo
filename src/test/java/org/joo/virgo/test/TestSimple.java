@@ -40,9 +40,13 @@ public class TestSimple {
 	public static List<Object[]> data() {
 		List<Object[]> list = new ArrayList<Object[]>();
 
-		list.add(new Object[] { "IF 1 + 1 == 2 THEN SET result = 1; SET result2 = 2", "result", 1L });
+		list.add(new Object[] { "IF 1 + 1 == 2 THEN { IF sqrt(4) == 2 THEN SET result = 1 ELSE SET result = 2 } ELSE SET result = 3", null, 1L });
+		list.add(new Object[] { "IF 1 + 1 == 2 THEN { IF sqrt(4) == 3 THEN SET result = 1 ELSE SET result = 2 } ELSE SET result = 3", null, 2L });
+		list.add(new Object[] { "IF 1 + 1 == 3 THEN { IF sqrt(4) == 2 THEN SET result = 1 ELSE SET result = 2 } ELSE SET result = 3", null, 3L });
+		list.add(new Object[] { "IF 1 + 1 == 2 THEN IF sqrt(4) == 2 THEN SET result = 1", null, 1L });
 		list.add(new Object[] { "IF 1 + 1 == 2 THEN SET result = 1; SET result2 = 2", "result2", 2L });
 		list.add(new Object[] { "IF 1 + 1 == 2 THEN SET result = 1", null, 1L });
+		list.add(new Object[] { "IF 1 + 1 < 2 THEN SET result = 1", null, null });
 		list.add(new Object[] { "IF 1 + 1 < 2 THEN SET result = 1", null, null });
 		list.add(new Object[] { "IF 1 + 1 < 2 THEN SET result = 1 ELSE SET result = 2", null, 2L });
 		list.add(new Object[] { "IF 1 + 1 < 2 THEN SET result = 1 ELSE SET result = 2; SET result2 = 3", "result", 2L });

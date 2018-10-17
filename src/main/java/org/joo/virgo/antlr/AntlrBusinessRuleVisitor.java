@@ -9,7 +9,7 @@ import org.joo.virgo.node.IfExecutionNode;
 import org.joo.virgo.node.MultiActionsExecutionNode;
 
 public class AntlrBusinessRuleVisitor extends AbstractAntlrBusinessRuleVisitor {
-
+	
 	@Override
 	public ExecutionNode visitMultiActionsCtx(BusinessRuleParser.MultiActionsCtxContext ctx) {
 		ExecutionNode left = (ExecutionNode) visit(ctx.left);
@@ -18,6 +18,16 @@ public class AntlrBusinessRuleVisitor extends AbstractAntlrBusinessRuleVisitor {
 			return left;
 		right = (ExecutionNode) visit(ctx.right);
 		return new MultiActionsExecutionNode(left, right);
+	}
+	
+	@Override
+	public ExecutionNode visitNestedPhraseCtx(BusinessRuleParser.NestedPhraseCtxContext ctx) {
+		return visit(ctx.nested);
+	}
+	
+	@Override
+	public ExecutionNode visitNestedActionCtx(BusinessRuleParser.NestedActionCtxContext ctx) {
+		return visit(ctx.nested);
 	}
 
 	@Override

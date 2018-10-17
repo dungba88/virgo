@@ -28,4 +28,6 @@ actions
 	SET variable = VARIABLE EQUALS value = expression # assignCtx
 	| left = actions SEMICOLON right = actions # multiActionsCtx
 	| left = actions SEMICOLON # multiActionsCtx
+	| nested = phrase # nestedPhraseCtx
+	| LBRACE nested = actions RBRACE # nestedActionCtx
 ;
