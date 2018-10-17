@@ -81,7 +81,6 @@ SET {someVariable} = {someExpression}
 The following are valid examples:
 
 ```
-// Simple
 IF 1 + 1 == 2 THEN SET result = 1
 
 IF customer.age > 50 THEN SET seniorCitizen = true ELSE SET seniorCitizen = false
