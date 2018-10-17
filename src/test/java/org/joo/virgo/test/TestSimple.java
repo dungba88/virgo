@@ -45,12 +45,12 @@ public class TestSimple {
 		list.add(new Object[] { "IF 1 + 1 == 2 THEN SET result = 1", null, 1L });
 		list.add(new Object[] { "IF 1 + 1 < 2 THEN SET result = 1", null, null });
 		list.add(new Object[] { "IF 1 + 1 < 2 THEN SET result = 1 ELSE SET result = 2", null, 2L });
-		list.add(new Object[] { "IF 1 + 1 < 2 THEN SET result = 1 ELSE SET result = 2; set result2 = 3", "result", 2L });
-		list.add(new Object[] { "IF 1 + 1 < 2 THEN SET result = 1 ELSE SET result = 2; set result2 = 3", "result2", 3L });
-		list.add(new Object[] { "IF 1 + 1 < 2 THEN SET result = 1 ELSE IF 1 + 1 == 2 THEN SET result = 2; set result2 = 3", "result", 2L });
-		list.add(new Object[] { "IF 1 + 1 < 2 THEN SET result = 1 ELSE IF 1 + 1 == 2 THEN SET result = 2; set result2 = 3", "result2", 3L });
-		list.add(new Object[] { "IF 1 + 1 < 2 THEN SET result = 1 ELSE IF 1 + 1 > 2 THEN SET result = 2; set result2 = 3", null, null });
-		list.add(new Object[] { "IF 1 + 1 < 2 THEN SET result = 1 ELSE IF 1 + 1 > 2 THEN SET result = 2 ELSE set result2 = 3", null, 3L });
+		list.add(new Object[] { "IF 1 + 1 < 2 THEN SET result = 1 ELSE SET result = 2; SET result2 = 3", "result", 2L });
+		list.add(new Object[] { "IF 1 + 1 < 2 THEN SET result = 1 ELSE SET result = 2; SET result2 = 3", "result2", 3L });
+		list.add(new Object[] { "IF 1 + 1 < 2 THEN SET result = 1 ELSE IF 1 + 1 == 2 THEN SET result = 2; SET result2 = 3", "result", 2L });
+		list.add(new Object[] { "IF 1 + 1 < 2 THEN SET result = 1 ELSE IF 1 + 1 == 2 THEN SET result = 2; SET result2 = 3", "result2", 3L });
+		list.add(new Object[] { "IF 1 + 1 < 2 THEN SET result = 1 ELSE IF 1 + 1 > 2 THEN SET result = 2; SET result2 = 3", null, null });
+		list.add(new Object[] { "IF 1 + 1 < 2 THEN SET result = 1 ELSE IF 1 + 1 > 2 THEN SET result = 2 ELSE SET result2 = sqrt(9)", null, 3.0 });
 		list.add(new Object[] { "SET result = true", null, true });
 
 		return list;
