@@ -66,5 +66,4 @@ IF order.price > 100 THEN SET discount = 0.1
 IF product.brand is 'Apple' THEN SET discount = 0.2 
 ELSE IF product.brand is 'Samsung' THEN SET discount = 0.3
 ELSE SET discount = 0.1
-
 ```
