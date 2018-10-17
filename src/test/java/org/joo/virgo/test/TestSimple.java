@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.joo.virgo.BusinessRule;
 import org.joo.virgo.DefaultBusinessRule;
-import org.joo.virgo.model.DefaultExecutionResult;
 import org.joo.virgo.model.ExecutionResult;
 import org.junit.Assert;
 import org.junit.Test;
@@ -29,7 +28,7 @@ public class TestSimple {
 	@Test
 	public void testSimple() {
 		BusinessRule rule = new DefaultBusinessRule(value);
-		ExecutionResult result = rule.execute(null).orElse(new DefaultExecutionResult(null));
+		ExecutionResult result = rule.execute(null).orElseThrow(() -> new NullPointerException("result is null"));
 		if (name == null)
 			Assert.assertEquals(value + ":", expected, result.getValue());
 		else
