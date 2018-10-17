@@ -19,12 +19,12 @@ ExecutionResult result = rule.execute(ruleContext);
 
 These are the supported grammar of Virgo
 
-Single IF condition:
+Single condition:
 ```
 IF {condition} THEN {actions}
 ```
 
-Multiple IF conditions:
+Branched conditions:
 ```
 IF {condition} THEN {actions}
 ELSE IF {condition} THEN {actions}
@@ -47,11 +47,14 @@ SET {someVariable} = {someExpression};
 SET {anotherVariable} = {anotherExpression};
 ```
 
+*Note: The line break is not required, it's just to make it easier to read*
+
 ## examples
 
 The following are valid examples:
 
 ```
+// Simple
 IF 1 + 1 == 2 THEN SET result = 1
 
 IF customer.age > 50 THEN SET seniorCitizen = true ELSE SET seniorCitizen = false
@@ -60,4 +63,7 @@ SET seniorCitizen = customer.age > 50
 
 IF order.price > 100 THEN SET discount = 0.1
 
+IF product.brand is 'Apple' THEN SET discount = 0.2 
+ELSE IF product.brand is 'Samsung' THEN SET discount = 0.3
+ELSE SET discount = 0.1
 ```
