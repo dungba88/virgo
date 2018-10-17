@@ -1,7 +1,6 @@
 package org.joo.virgo.antlr;
 
 import org.joo.virgo.antlr.grammar.BusinessRuleParser;
-import org.joo.virgo.antlr.grammar.BusinessRuleParserBaseVisitor;
 import org.joo.virgo.node.AssignExecutionNode;
 import org.joo.virgo.node.ElseExecutionNode;
 import org.joo.virgo.node.ExecutionNode;
@@ -9,8 +8,8 @@ import org.joo.virgo.node.ExpressionExecutionNode;
 import org.joo.virgo.node.IfExecutionNode;
 import org.joo.virgo.node.MultiActionsExecutionNode;
 
-public class AntlrBusinessRuleVisitor extends BusinessRuleParserBaseVisitor<ExecutionNode> {
-	
+public class AntlrBusinessRuleVisitor extends AbstractAntlrBusinessRuleVisitor {
+
 	@Override
 	public ExecutionNode visitMultiActionsCtx(BusinessRuleParser.MultiActionsCtxContext ctx) {
 		ExecutionNode left = (ExecutionNode) visit(ctx.left);
@@ -19,12 +18,6 @@ public class AntlrBusinessRuleVisitor extends BusinessRuleParserBaseVisitor<Exec
 			return left;
 		right = (ExecutionNode) visit(ctx.right);
 		return new MultiActionsExecutionNode(left, right);
-	}
-
-	@Override
-	public ExecutionNode visitExpression(BusinessRuleParser.ExpressionContext ctx) {
-		String expression = ctx.getText();
-		return new ExpressionExecutionNode(expression.substring(2, expression.length() - 2));
 	}
 
 	@Override
@@ -40,7 +33,7 @@ public class AntlrBusinessRuleVisitor extends BusinessRuleParserBaseVisitor<Exec
 		ExecutionNode rightPhrase = visit(ctx.right != null ? ctx.right : ctx.impositions);
 		return new ElseExecutionNode(leftPhrase, rightPhrase);
 	}
-	
+
 	@Override
 	public ExecutionNode visitAssignCtx(BusinessRuleParser.AssignCtxContext ctx) {
 		String variableName = ctx.variable.getText();
