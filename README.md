@@ -65,8 +65,9 @@ No condition at all:
 
 Multiple actions can be separated by semicolons:
 ```
-<action>;
-<action>;
+IF <condition> THEN
+  <action>;
+  <action>;
 ```
 
 Currently only assignment action is supported:
