@@ -74,6 +74,8 @@ Currently only assignment action is supported:
 SET {someVariable} = {someExpression}
 ```
 
+The syntax for `condition` and `expression` can be found in [Libra](https://github.com/dungba88/libra) repository.
+
 *Note: The line break is not required, it's just to make it easier to read*
 
 ## examples
