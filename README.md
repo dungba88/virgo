@@ -77,7 +77,7 @@ IF <condition> THEN
 
 Currently only assignment action is supported:
 ```
-SET {someVariable} = {someExpression}
+SET <someVariable> = <someExpression>
 ```
 
 The syntax for `condition` and `expression` can be found in [Libra](https://github.com/dungba88/libra) repository.
