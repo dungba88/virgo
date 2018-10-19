@@ -101,3 +101,7 @@ IF product.brand is 'Apple' THEN SET discount = 0.2
 ELSE IF product.brand is 'Samsung' THEN SET discount = 0.3
 ELSE SET discount = 0.1
 ```
+
+## license
+
+This library is distributed under MIT license, see [LICENSE](LICENSE)
