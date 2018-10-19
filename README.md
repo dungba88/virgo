@@ -32,7 +32,7 @@ These are the supported grammar of Virgo
 
 Single condition:
 ```
-IF {condition} THEN {actions}
+IF <condition> THEN <actions>
 ```
 
 Branched conditions:
