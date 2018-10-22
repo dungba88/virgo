@@ -15,7 +15,7 @@ import lombok.NonNull;
 public class DefaultBusinessRule implements BusinessRule {
 
 	private ExecutionNode node;
-	
+
 	public DefaultBusinessRule(final String value) {
 		this(value, new AntlrBusinessRuleParser());
 	}
@@ -30,7 +30,6 @@ public class DefaultBusinessRule implements BusinessRule {
 			return Optional.empty();
 		TemporaryExecutionResult tmpResult = new TemporaryExecutionResult();
 		node.execute(context, tmpResult);
-		DefaultExecutionResult result = new DefaultExecutionResult(Collections.unmodifiableMap(tmpResult.getResults()));
-		return Optional.of(result);
+		return Optional.of(new DefaultExecutionResult(Collections.unmodifiableMap(tmpResult.getResults())));
 	}
 }
