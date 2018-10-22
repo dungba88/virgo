@@ -32,7 +32,7 @@ These are the supported grammar of Virgo
 
 Single condition:
 ```
-IF {condition} THEN {actions}
+IF <condition> THEN <actions>
 ```
 
 Branched conditions:
@@ -77,7 +77,7 @@ IF <condition> THEN
 
 Currently only assignment action is supported:
 ```
-SET {someVariable} = {someExpression}
+SET <someVariable> = <someExpression>
 ```
 
 The syntax for `condition` and `expression` can be found in [Libra](https://github.com/dungba88/libra) repository.
@@ -101,3 +101,7 @@ IF product.brand is 'Apple' THEN SET discount = 0.2
 ELSE IF product.brand is 'Samsung' THEN SET discount = 0.3
 ELSE SET discount = 0.1
 ```
+
+## license
+
+This library is distributed under MIT license, see [LICENSE](LICENSE)
