@@ -7,6 +7,44 @@
 
 Virgo is a Java Business Rule Engine, based on Libra. It supports an easy-to-use syntax for defining business rule.
 
+## how to use
+
+```java
+// create a business rule
+BusinessRule rule = new DefaultBusinessRule("IF customer.age > 50 THEN SET seniorCitizen = true");
+
+// create a rule context
+RuleContext context = new RuleContext(someObject);
+
+// execute it
+ExecutionResult result = rule.execute(ruleContext).orElseThrow(() -> new NullPointerException("result is null"));
+
+// get the result. this will get the first value in the result map
+Object resultValue = result.getValue();
+
+// get a specific result
+resultValue = result.getValue("seniorCitizen");
+```
+
+You can also merge multiple business rules into a single rule
+
+```java
+// create some business rules
+BusinessRule rule1 = new DefaultBusinessRule("IF customer.age > 50 THEN SET seniorCitizen = true");
+BusinessRule rule2 = new DefaultBusinessRule("IF order.price > 100 THEN SET discount = 0.1");
+
+// merge into a single rule
+BusinessRule rule = new MultiBusinessRule(rule1, rule2);
+
+// execute it
+ExecutionResult result = rule.execute(ruleContext).orElseThrow(() -> new NullPointerException("result is null"));
+
+// get the merged results
+boolean seniorCitizen = result.getValue("seniorCitizen");
+double discount = result.getValue("discount");
+
+```
+
 ## grammar
 
 These are the supported grammar of Virgo
@@ -81,44 +119,6 @@ IF order.price > 100 THEN SET discount = 0.1
 IF product.brand is 'Apple' THEN SET discount = 0.2 
 ELSE IF product.brand is 'Samsung' THEN SET discount = 0.3
 ELSE SET discount = 0.1
-```
-
-## how to use
-
-```java
-// create a business rule
-BusinessRule rule = new DefaultBusinessRule("IF customer.age > 50 THEN SET seniorCitizen = true");
-
-// create a rule context
-RuleContext context = new RuleContext(someObject);
-
-// execute it
-ExecutionResult result = rule.execute(ruleContext).orElseThrow(() -> new NullPointerException("result is null"));
-
-// get the result. this will get the first value in the result map
-Object resultValue = result.getValue();
-
-// get a specific result
-resultValue = result.getValue("seniorCitizen");
-```
-
-You can also merge multiple business rules into a single rule
-
-```java
-// create some business rules
-BusinessRule rule1 = new DefaultBusinessRule("IF customer.age > 50 THEN SET seniorCitizen = true");
-BusinessRule rule2 = new DefaultBusinessRule("IF order.price > 100 THEN SET discount = 0.1");
-
-// merge into a single rule
-BusinessRule rule = new MultiBusinessRule(rule1, rule2);
-
-// execute it
-ExecutionResult result = rule.execute(ruleContext).orElseThrow(() -> new NullPointerException("result is null"));
-
-// get the merged results
-boolean seniorCitizen = result.getValue("seniorCitizen");
-double discount = result.getValue("discount");
-
 ```
 
 ## license
