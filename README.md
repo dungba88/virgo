@@ -26,6 +26,25 @@ Object resultValue = result.getValue();
 resultValue = result.getValue("seniorCitizen");
 ```
 
+You can also merge multiple business rules into a single rule
+
+```java
+// create some business rules
+BusinessRule rule1 = new DefaultBusinessRule("IF customer.age > 50 THEN SET seniorCitizen = true");
+BusinessRule rule2 = new DefaultBusinessRule("IF order.price > 100 THEN SET discount = 0.1");
+
+// merge into a single rule
+BusinessRule rule = new MultiBusinessRule(rule1, rule2);
+
+// execute it
+ExecutionResult result = rule.execute(ruleContext).orElseThrow(() -> new NullPointerException("result is null"));
+
+// get the merged results
+boolean seniorCitizen = result.getValue("seniorCitizen");
+double discount = result.getValue("discount");
+
+```
+
 ## grammar
 
 These are the supported grammar of Virgo
