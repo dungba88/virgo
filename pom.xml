@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.dungba</groupId>
 	<artifactId>joo-virgo</artifactId>
-	<version>0.1.0</version>
+	<version>0.1.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>Virgo</name>
