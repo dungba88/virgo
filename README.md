@@ -7,6 +7,16 @@
 
 Virgo is a Java Business Rule Engine, based on Libra. It supports an easy-to-use syntax for defining business rule.
 
+## install
+
+```xml
+<dependency>
+    <groupId>org.dungba</groupId>
+    <artifactId>joo-virgo</artifactId>
+    <version>0.1.0</version>
+</dependency>
+```
+
 ## how to use
 
 ```java
