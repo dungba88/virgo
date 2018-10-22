@@ -6,3 +6,11 @@
 /BusinessRuleParser.tokens
 /BusinessRuleParserBaseVisitor.java
 /BusinessRuleParserVisitor.java
+/SqlLexerCommon.interp
+/SqlLexerCommon.java
+/SqlLexerCommon.tokens
+/SqlParserCommon.interp
+/SqlParserCommon.java
+/SqlParserCommon.tokens
+/SqlParserCommonBaseVisitor.java
+/SqlParserCommonVisitor.java
