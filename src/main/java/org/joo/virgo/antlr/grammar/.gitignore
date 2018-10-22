@@ -1,11 +1,7 @@
 /BusinessRuleLexer.interp
-/BusinessRuleLexer.java
 /BusinessRuleLexer.tokens
 /BusinessRuleParser.interp
-/BusinessRuleParser.java
 /BusinessRuleParser.tokens
-/BusinessRuleParserBaseVisitor.java
-/BusinessRuleParserVisitor.java
 /SqlLexerCommon.interp
 /SqlLexerCommon.java
 /SqlLexerCommon.tokens
