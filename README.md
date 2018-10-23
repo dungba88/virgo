@@ -1,6 +1,6 @@
 # virgo
 
-[![Maven Central](https://img.shields.io/maven-central/v/org.dungba/joo-virgo.svg?maxAge=604800)](http://mvnrepository.com/artifact/org.dungba/joo-virgo)
+[![Maven Central](https://img.shields.io/maven-central/v/org.dungba/joo-virgo.svg?maxAge=86400)](http://mvnrepository.com/artifact/org.dungba/joo-virgo)
 [![Javadocs](http://javadoc.io/badge/org.dungba/joo-virgo.svg)](http://javadoc.io/doc/org.dungba/joo-virgo)
 [![Build Status](https://travis-ci.org/dungba88/virgo.svg?branch=master)](https://travis-ci.org/dungba88/virgo)
 [![Coverage Status](https://coveralls.io/repos/github/dungba88/virgo/badge.svg?branch=master&maxAge=86400)](https://coveralls.io/github/dungba88/virgo?branch=master)
