@@ -18,7 +18,7 @@ businessRule
 
 phrase
 :
-	IF condition = term THEN impositions = actions # ifCtx
+	IF condition = expression THEN impositions = actions # ifCtx
 	| left = phrase ELSE right = phrase # elseCtx
 	| left = phrase ELSE impositions = actions # elseCtx
 ;

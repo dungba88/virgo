@@ -185,12 +185,12 @@ public class BusinessRuleParser extends Parser {
 		}
 	}
 	public static class IfCtxContext extends PhraseContext {
-		public TermContext condition;
+		public ExpressionContext condition;
 		public ActionsContext impositions;
 		public TerminalNode IF() { return getToken(BusinessRuleParser.IF, 0); }
 		public TerminalNode THEN() { return getToken(BusinessRuleParser.THEN, 0); }
-		public TermContext term() {
-			return getRuleContext(TermContext.class,0);
+		public ExpressionContext expression() {
+			return getRuleContext(ExpressionContext.class,0);
 		}
 		public ActionsContext actions() {
 			return getRuleContext(ActionsContext.class,0);
@@ -226,7 +226,7 @@ public class BusinessRuleParser extends Parser {
 			setState(21);
 			match(IF);
 			setState(22);
-			((IfCtxContext)_localctx).condition = term();
+			((IfCtxContext)_localctx).condition = expression(0);
 			setState(23);
 			match(THEN);
 			setState(24);
@@ -1747,7 +1747,7 @@ public class BusinessRuleParser extends Parser {
 		"\u0107\2\24\3\2\2\2\4\26\3\2\2\2\6\61\3\2\2\2\b=\3\2\2\2\nU\3\2\2\2\f"+
 		"\u009f\3\2\2\2\16\u00bc\3\2\2\2\20\u00d5\3\2\2\2\22\25\5\4\3\2\23\25\5"+
 		"\6\4\2\24\22\3\2\2\2\24\23\3\2\2\2\25\3\3\2\2\2\26\27\b\3\1\2\27\30\7"+
-		"\4\2\2\30\31\5\f\7\2\31\32\7\5\2\2\32\33\5\6\4\2\33$\3\2\2\2\34\35\f\4"+
+		"\4\2\2\30\31\5\n\6\2\31\32\7\5\2\2\32\33\5\6\4\2\33$\3\2\2\2\34\35\f\4"+
 		"\2\2\35\36\7\7\2\2\36#\5\4\3\5\37 \f\3\2\2 !\7\7\2\2!#\5\6\4\2\"\34\3"+
 		"\2\2\2\"\37\3\2\2\2#&\3\2\2\2$\"\3\2\2\2$%\3\2\2\2%\5\3\2\2\2&$\3\2\2"+
 		"\2\'(\b\4\1\2()\7\3\2\2)*\7\65\2\2*+\7!\2\2+\62\5\n\6\2,\62\5\4\3\2-."+

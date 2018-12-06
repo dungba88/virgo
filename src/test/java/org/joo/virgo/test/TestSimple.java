@@ -53,8 +53,13 @@ public class TestSimple {
 		list.add(new Object[] { "IF 1 + 1 < 2 THEN SET result = 1 ELSE IF 1 + 1 == 2 THEN SET result = 2; SET result2 = 3", "result", 2L });
 		list.add(new Object[] { "IF 1 + 1 < 2 THEN SET result = 1 ELSE IF 1 + 1 == 2 THEN SET result = 2; SET result2 = 3", "result2", 3L });
 		list.add(new Object[] { "IF 1 + 1 < 2 THEN SET result = 1 ELSE IF 1 + 1 > 2 THEN SET result = 2; SET result2 = 3", null, null });
-		list.add(new Object[] { "IF 1 + 1 < 2 THEN SET result = 1 ELSE IF 1 + 1 > 2 THEN SET result = 2 ELSE SET result2 = sqrt(9)", null, 3.0 });
-		list.add(new Object[] { "SET result = true", null, true });
+		list.add(new Object[] { "IF (1 + 1 < 2) THEN SET result = 1 ELSE IF 1 + 1 > 2 THEN SET result = 2 ELSE SET result2 = sqrt(9)", null, 3.0 });
+        list.add(new Object[] { "SET result = true", null, true });
+        list.add(new Object[] { "IF not list contains 1 THEN SET result = 1", null, 1L });
+        list.add(new Object[] { "IF not list in 1 THEN SET result = 1", null, 1L });
+        list.add(new Object[] { "IF 1 + 1 == 2 AND 2 + 2 == 4 THEN SET result = 1", null, 1L });
+        list.add(new Object[] { "IF sku in {'1', '2', '3'} THEN  SET result = 1", null, null });
+        list.add(new Object[] { "IF not sku in {'1', '2', '3'} THEN  SET result = 1", null, 1L });
 
 		return list;
 	}
